@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@id/topAiringFragment">
+    <fragment android:id="@+id/topAiringFragment" android:name="com.riluq.animeapp.topairing.TopAiringFragment"
+              android:label="@string/top_airing" tools:layout="@layout/fragment_top_airing"/>
+    <fragment android:id="@+id/topUpcomingFragment" android:name="com.riluq.animeapp.topupcoming.TopUpcomingFragment"
+              android:label="@string/top_upcoming" tools:layout="@layout/fragment_top_upcoming"/>
+    <fragment android:id="@+id/topFavoriteFragment" android:name="com.riluq.animeapp.topfavorite.TopFavoriteFragment"
+              android:label="@string/top_favorite" tools:layout="@layout/fragment_top_favorite"/>
+    <fragment android:id="@+id/seasonLaterFragment" android:name="com.riluq.animeapp.seasonlater.SeasonLaterFragment"
+              android:label="@string/season_later" tools:layout="@layout/fragment_season_later"/>
+    <fragment android:id="@+id/scheduleFragment" android:name="com.riluq.animeapp.schedule.ScheduleFragment"
+              android:label="@string/schedule" tools:layout="@layout/fragment_schedule"/>
+    <fragment android:id="@+id/genreFragment" android:name="com.riluq.animeapp.genre.GenreFragment"
+              android:label="@string/genre" tools:layout="@layout/fragment_genre"/>
+</navigation>

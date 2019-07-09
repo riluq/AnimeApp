@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:title="@string/top_airing"
+            android:icon="@drawable/ic_baseline_live_tv_24px"
+            android:id="@+id/topAiringFragment"/>
+    <item
+            android:title="@string/top_upcoming"
+            android:icon="@drawable/ic_calendar"
+            android:id="@+id/topUpcomingFragment"/>
+    <item
+            android:title="@string/top_favorite"
+            android:icon="@drawable/ic_star"
+            android:id="@+id/topFavoriteFragment"/>
+    <item
+            android:title="@string/season_later"
+            android:icon="@drawable/ic_baseline_watch_later_24px"
+            android:id="@+id/seasonLaterFragment"/>
+    <item
+            android:title="@string/schedule"
+            android:icon="@drawable/ic_baseline_schedule_24px"
+            android:id="@+id/scheduleFragment"/>
+    <item
+            android:title="@string/genre"
+            android:icon="@drawable/ic_baseline_collections_24px"
+            android:id="@+id/genreFragment"/>
+
+
+
+
+
+</menu>
