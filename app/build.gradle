@@ -74,4 +74,5 @@ dependencies {
 
     // Design support library
     implementation "com.google.android.material:material:$version_material"
+
 }
