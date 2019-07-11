@@ -34,7 +34,7 @@ data class TopAiring(
     val membersTopAiring: Int? = null,
 
     @Json(name = "score")
-    val scoreTopAiring: Int? = null
+    val scoreTopAiring: Double? = null
 
 
 
