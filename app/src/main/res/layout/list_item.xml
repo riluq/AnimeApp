@@ -20,7 +20,7 @@
                 android:layout_marginTop="16dp">
             <ImageView
                     android:id="@+id/img_list"
-                    android:layout_width="match_parent"
+                    android:layout_width="65dp"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     tools:srcCompat="@android:color/holo_blue_light"
