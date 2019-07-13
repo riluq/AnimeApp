@@ -2,7 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="topAiring" type="com.riluq.animeapp.network.TopAiring"/>
+        <variable
+                name="topUpcoming"
+                type="com.riluq.animeapp.network.TopUpcoming"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -24,7 +26,7 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     tools:srcCompat="@android:color/holo_blue_light"
-                    app:imageUrl="@{topAiring.imageUrlTopAiring}"/>
+                    app:imageUrl="@{topUpcoming.imageUrlTopUpcoming}"/>
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
@@ -37,7 +39,7 @@
                 android:layout_marginStart="8dp" app:layout_constraintTop_toTopOf="@+id/mcv_list"
                 app:layout_constraintBottom_toBottomOf="@+id/mcv_list"
                 android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/tv_rank_list"
-                app:textTitle="@{topAiring.titleTopAiring}"/>
+                app:textTitle="@{topUpcoming.titleTopUpcoming}"/>
         <TextView
                 android:id="@+id/tv_rank_list"
                 tools:text="#1"
@@ -47,17 +49,17 @@
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
                 app:layout_constraintTop_toTopOf="@+id/mcv_list"
-                app:textRank="@{topAiring.rankTopAiring}"/>
+                app:textRank="@{topUpcoming.rankTopUpcoming}"/>
         <TextView
+                android:id="@+id/tv_score_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_title_list"
                 app:layout_constraintStart_toEndOf="@+id/mcv_list" android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toBottomOf="@+id/mcv_list" android:layout_marginTop="8dp"
                 tools:text="Score : 8.83"
-                app:textScore="@{topAiring.scoreTopAiring}"/>
+                app:textScore="@{topUpcoming.scoreTopUpcoming}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

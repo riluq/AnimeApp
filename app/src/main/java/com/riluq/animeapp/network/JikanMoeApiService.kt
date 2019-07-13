@@ -24,6 +24,11 @@ interface JikanMoeApiService {
     @GET("top/anime/1/airing")
     fun getTopAiringAsync():
             Deferred<TopAiringResponse>
+
+    @GET("top/anime/1/upcoming")
+    fun getTopUpcomingAsync():
+            Deferred<TopUpcomingResponse>
+
 }
 
 object JikanMoeApi {

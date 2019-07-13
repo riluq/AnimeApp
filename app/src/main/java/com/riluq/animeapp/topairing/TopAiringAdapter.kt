@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.riluq.animeapp.databinding.ListItemBinding
+import com.riluq.animeapp.databinding.TopAiringListItemBinding
 import com.riluq.animeapp.network.TopAiring
 
 class TopAiringAdapter: ListAdapter<TopAiring, TopAiringAdapter.TopAiringViewHolder>(DiffCallback) {
@@ -19,7 +19,7 @@ class TopAiringAdapter: ListAdapter<TopAiring, TopAiringAdapter.TopAiringViewHol
         holder.bind(topAiring)
     }
 
-    class TopAiringViewHolder(private val binding: ListItemBinding) :
+    class TopAiringViewHolder(private val binding: TopAiringListItemBinding) :
         RecyclerView.ViewHolder(binding.root){
 
         fun bind(topAiring: TopAiring) {
@@ -29,7 +29,7 @@ class TopAiringAdapter: ListAdapter<TopAiring, TopAiringAdapter.TopAiringViewHol
         companion object {
             fun from(parent: ViewGroup): TopAiringViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val bindng = ListItemBinding.inflate(layoutInflater, parent, false)
+                val bindng = TopAiringListItemBinding.inflate(layoutInflater, parent, false)
                 return TopAiringViewHolder(bindng)
             }
         }

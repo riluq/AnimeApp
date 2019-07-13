@@ -3,14 +3,13 @@ package com.riluq.animeapp.topairing
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.riluq.animeapp.JikanMoeApiStatus
 import com.riluq.animeapp.network.JikanMoeApi
 import com.riluq.animeapp.network.TopAiring
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-
-enum class JikanMoeApiStatus {Loading, Error, Done}
 
 class TopAiringViewModel: ViewModel() {
 
