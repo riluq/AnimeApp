@@ -1,6 +1,5 @@
 package com.riluq.animeapp.topairing
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,6 +10,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
+enum class JikanMoeApiStatus {Loading, Error, Done}
+
 class TopAiringViewModel: ViewModel() {
 
     private var viewModelJob = Job()
@@ -20,22 +21,27 @@ class TopAiringViewModel: ViewModel() {
     val topAiring: LiveData<List<TopAiring>>
         get() = _topAiring
 
+    private val _status = MutableLiveData<JikanMoeApiStatus>()
+    val status: LiveData<JikanMoeApiStatus>
+        get() = _status
+
     init {
         getTopAiring()
     }
 
-    private fun getTopAiring() {
+    fun getTopAiring() {
         coroutineScope.launch {
             val getTopAiringDeffered = JikanMoeApi.retrofitService.getTopAiringAsync()
             try {
+                _status.value = JikanMoeApiStatus.Loading
                 val listResult = getTopAiringDeffered.await().top
                 if (listResult.size > 0) {
                     _topAiring.value = listResult
                 }
-                Log.i("TopAiringViewModel", "topAiring = ${topAiring.value?.get(0)?.titleTopAiring}")
+                _status.value = JikanMoeApiStatus.Done
             } catch (t: Throwable) {
+                _status.value = JikanMoeApiStatus.Error
                 _topAiring.value = ArrayList()
-                Log.i("TopAiringViewModel", t.message.toString())
             }
         }
     }
