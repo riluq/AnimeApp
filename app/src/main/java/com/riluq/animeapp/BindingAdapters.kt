@@ -33,16 +33,22 @@ fun ImageView.bindImage(imgUrl: String?) {
     }
 }
 
-@BindingAdapter("textTopAiringTitle")
-fun TextView.bindTextAiringTitle(text: String?) {
+@BindingAdapter("textTitle")
+fun TextView.bindTextTitle(text: String?) {
     text.let {
         this.text = it
     }
 }
-@BindingAdapter("textTopAiringRank")
+@BindingAdapter("textRank")
 fun TextView.bindTextAiringRank(number: Int?) {
     number.let {
         this.text = "#$it"
+    }
+}
+@BindingAdapter("textScore")
+fun TextView.bindTextAiringScore(score: Double?) {
+    score.let {
+        this.text = "Score $it"
     }
 }
 

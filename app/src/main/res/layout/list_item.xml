@@ -37,7 +37,7 @@
                 android:layout_marginStart="8dp" app:layout_constraintTop_toTopOf="@+id/mcv_list"
                 app:layout_constraintBottom_toBottomOf="@+id/mcv_list"
                 android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/tv_rank_list"
-                app:textTopAiringTitle="@{topAiring.titleTopAiring}"/>
+                app:textTitle="@{topAiring.titleTopAiring}"/>
         <TextView
                 android:id="@+id/tv_rank_list"
                 tools:text="#1"
@@ -47,7 +47,17 @@
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
                 app:layout_constraintTop_toTopOf="@+id/mcv_list"
-                app:textTopAiringRank="@{topAiring.rankTopAiring}"/>
+                app:textRank="@{topAiring.rankTopAiring}"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_list"
+                app:layout_constraintStart_toEndOf="@+id/mcv_list" android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/mcv_list" android:layout_marginTop="8dp"
+                tools:text="Score : 8.83"
+                app:textScore="@{topAiring.scoreTopAiring}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
