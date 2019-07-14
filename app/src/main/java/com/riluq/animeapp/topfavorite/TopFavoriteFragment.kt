@@ -6,26 +6,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProviders
 
 import com.riluq.animeapp.R
+import com.riluq.animeapp.databinding.FragmentTopFavoriteBinding
+import com.riluq.animeapp.topairing.TopAiringAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class TopFavoriteFragment : Fragment() {
+
+    private val viewModel: TopFavoriteViewModel by lazy {
+        ViewModelProviders.of(this).get(TopFavoriteViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_top_favorite, container, false)
+        val binding = FragmentTopFavoriteBinding.inflate(inflater)
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+
+        binding.srlTopFavorite.setColorSchemeResources(R.color.secondaryColor,
+            android.R.color.holo_green_light,
+            android.R.color.holo_orange_light,
+            android.R.color.holo_red_light)
+
+        binding.rvTopFavorite.adapter = TopFavoriteAdapter()
+
+        binding.srlTopFavorite.setOnRefreshListener {
+            viewModel.getTopFavorite()
+        }
+
+
+        return binding.root
     }
 
 

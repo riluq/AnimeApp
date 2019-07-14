@@ -29,8 +29,8 @@ class TopAiringAdapter: ListAdapter<TopAiring, TopAiringAdapter.TopAiringViewHol
         companion object {
             fun from(parent: ViewGroup): TopAiringViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val bindng = TopAiringListItemBinding.inflate(layoutInflater, parent, false)
-                return TopAiringViewHolder(bindng)
+                val binding = TopAiringListItemBinding.inflate(layoutInflater, parent, false)
+                return TopAiringViewHolder(binding)
             }
         }
     }

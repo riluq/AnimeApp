@@ -24,7 +24,6 @@ class TopAiringFragment : Fragment() {
     ): View? {
         val binding = FragmentTopAiringBinding.inflate(inflater)
         binding.lifecycleOwner = this
-        // Inflate the layout for this fragment
         binding.viewModel = viewModel
 
         binding.srlTopAiring.setColorSchemeResources(R.color.secondaryColor,

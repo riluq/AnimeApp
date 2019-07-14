@@ -9,8 +9,10 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.riluq.animeapp.network.TopAiring
+import com.riluq.animeapp.network.TopFavorite
 import com.riluq.animeapp.network.TopUpcoming
 import com.riluq.animeapp.topairing.TopAiringAdapter
+import com.riluq.animeapp.topfavorite.TopFavoriteAdapter
 import com.riluq.animeapp.topupcoming.TopUpcomingAdapter
 
 @BindingAdapter("listDataTopAiring")
@@ -22,6 +24,12 @@ fun RecyclerView.bindRecyclerViewTopAiring(data: List<TopAiring>?) {
 @BindingAdapter("listDataTopUpcoming")
 fun RecyclerView.bindRecyclerViewTopUpcoming(data: List<TopUpcoming>?) {
     val adapter = adapter as TopUpcomingAdapter
+    adapter.submitList(data)
+}
+
+@BindingAdapter("listDataTopFavorite")
+fun RecyclerView.bindRecyclerViewTopFavorite(data: List<TopFavorite>?) {
+    val adapter = adapter as TopFavoriteAdapter
     adapter.submitList(data)
 }
 
