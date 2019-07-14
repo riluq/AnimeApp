@@ -27,7 +27,6 @@ class TopUpcomingFragment : Fragment() {
     ): View? {
         val binding = FragmentTopUpcomingBinding.inflate(inflater)
         binding.lifecycleOwner = this
-        // Inflate the layout for this fragment
         binding.viewModel = viewModel
 
         binding.srlTopUpcoming.setColorSchemeResources(R.color.secondaryColor,

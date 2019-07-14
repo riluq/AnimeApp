@@ -32,6 +32,10 @@ interface JikanMoeApiService {
     @GET("top/anime/1/favorite")
     fun getTopFavoriteAsync():
             Deferred<TopFavoriteResponse>
+
+    @GET("season/later")
+    fun getSeasonLaterAsync():
+            Deferred<SeasonLaterResponse>
 }
 
 object JikanMoeApi {

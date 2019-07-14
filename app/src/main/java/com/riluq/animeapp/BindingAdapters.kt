@@ -8,9 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.riluq.animeapp.network.SeasonLater
 import com.riluq.animeapp.network.TopAiring
 import com.riluq.animeapp.network.TopFavorite
 import com.riluq.animeapp.network.TopUpcoming
+import com.riluq.animeapp.seasonlater.SeasonLaterAdapter
 import com.riluq.animeapp.topairing.TopAiringAdapter
 import com.riluq.animeapp.topfavorite.TopFavoriteAdapter
 import com.riluq.animeapp.topupcoming.TopUpcomingAdapter
@@ -30,6 +32,12 @@ fun RecyclerView.bindRecyclerViewTopUpcoming(data: List<TopUpcoming>?) {
 @BindingAdapter("listDataTopFavorite")
 fun RecyclerView.bindRecyclerViewTopFavorite(data: List<TopFavorite>?) {
     val adapter = adapter as TopFavoriteAdapter
+    adapter.submitList(data)
+}
+
+@BindingAdapter("listDataSeasonLater")
+fun RecyclerView.bindRecyclerViewSeasonLater(data: List<SeasonLater>?) {
+    val adapter = adapter as SeasonLaterAdapter
     adapter.submitList(data)
 }
 
