@@ -36,6 +36,10 @@ interface JikanMoeApiService {
     @GET("season/later")
     fun getSeasonLaterAsync():
             Deferred<SeasonLaterResponse>
+
+    @GET("schedule")
+    fun getScheduleAsync():
+            Deferred<ScheduleResponse>
 }
 
 object JikanMoeApi {

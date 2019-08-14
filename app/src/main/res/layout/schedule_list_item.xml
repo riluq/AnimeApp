@@ -2,9 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable
-                name="seasonLater"
-                type="com.riluq.animeapp.network.SeasonLater"/>
+        <variable name="schedule" type="com.riluq.animeapp.network.Schedule"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -26,7 +24,7 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     tools:srcCompat="@android:color/holo_blue_light"
-                    app:imageUrl="@{seasonLater.imageSeasonLater}"/>
+                    app:imageUrl="@{schedule.imageSchedule}"/>
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
@@ -36,10 +34,21 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?attr/textAppearanceSubtitle1"
                 app:layout_constraintStart_toEndOf="@+id/mcv_list"
-                android:layout_marginStart="8dp" app:layout_constraintTop_toTopOf="@+id/mcv_list"
+                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toBottomOf="@+id/mcv_list"
-                app:textTitle="@{seasonLater.titleSeasonLater}" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="16dp"/>
+                app:textTitle="@{schedule.titleSchedule}" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_airing_start" android:layout_marginBottom="8dp"/>
+        <TextView
+                tools:text="2019-07-07T15:10:00+00:00"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_airing_start"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:textTitle="@{schedule.airingStartSchedule}"
+                app:layout_constraintStart_toEndOf="@+id/mcv_list"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toTopOf="@+id/mcv_list" android:layout_marginTop="8dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
